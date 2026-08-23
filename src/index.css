@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: radial-gradient(ellipse at top, #f0f9ff 0%, #f8fafc 40%, #ffffff 100%);
+    color: #0c4a6e;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #bae6fd transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #bae6fd;
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ocean-100/80 bg-white shadow-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:border-ocean-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-ocean-600 to-abyss-600 bg-clip-text text-transparent;
+  }
+
+  .stat-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-ocean-700/70 transition-all duration-200 hover:bg-ocean-50 hover:text-ocean-700;
+  }
+
+  .nav-item-active {
+    @apply bg-ocean-gradient text-white shadow-glow hover:text-white;
+  }
+}
+
+@layer utilities {
+  .shimmer-bg {
+    background: linear-gradient(90deg, #f0f9ff 25%, #e0f2fe 50%, #f0f9ff 75%);
+    background-size: 200% 100%;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .map-grid {
+    background-image:
+      linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .water-texture {
+    background-image:
+      radial-gradient(circle at 20% 35%, rgba(14, 165, 233, 0.12) 0%, transparent 8%),
+      radial-gradient(circle at 70% 65%, rgba(6, 182, 212, 0.1) 0%, transparent 10%),
+      radial-gradient(circle at 45% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 8%);
+  }
+}
